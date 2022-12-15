@@ -11,6 +11,62 @@ class PagesController extends Controller
         return view('welcome');
     }
 
+
+    public function fnEstDetalle($id){
+        $xDetAlumnos = Estudiante::findOrFail($id);
+        return view('Estudiante.pagDetalle', compact('xDetAlumnos'));
+    }
+
+    public function fnEstActualizar($id){
+        $xActAlumnos = Estudiante::findOrFail($id);
+        return view('Estudiante.pagActualizar', compact('xActAlumnos'));
+    }
+
+    public function fnEliminar($id){
+        $xdeleteAlumno = Estudiante::findOrFail($id);
+        $xdeletAlumno -> delete ();
+
+        return back()->with('msj','Se Elimino con exito :( ');
+    }
+  
+
+    public function fnUpdate(Request $request, $id){
+
+        $xUpdateAlumnos = Estudiante::findOrFail($id);
+
+        $xUpdateAlumnos->codEst = $request -> codEst;
+        $xUpdateAlumnos->nomEst = $request -> nomEst;
+        $xUpdateAlumnos->apeEst = $request -> apeEst;
+        $xUpdateAlumnos->fnaEst = $request -> fnaEst;
+        $xUpdateAlumnos->turMat = $request -> turMat;
+        $xUpdateAlumnos->semMat = $request -> semMat;
+        $xUpdateAlumnos->estMat = $request -> estMat;
+        
+        $xUpdateAlumnos-> save();
+
+        return back()->with('msj','Se Actualizo con exito :3 ');
+    }    
+
+
+    public function fnRegistrar(Request $request){
+
+        $request -> validate(['codEst' =>'required', 'nomEst' =>'required','apeEst' =>'required','fnaEst' =>'required','turMat' =>'required','semMat' =>'required','estMat' =>'required' ]);
+
+        $nuevoEstudiante = new Estudiante;
+
+        $nuevoEstudiante->codEst = $request -> codEst;
+        $nuevoEstudiante->nomEst = $request -> nomEst;
+        $nuevoEstudiante->apeEst = $request -> apeEst;
+        $nuevoEstudiante->fnaEst = $request -> fnaEst;
+        $nuevoEstudiante->turMat = $request -> turMat;
+        $nuevoEstudiante->semMat = $request -> semMat;
+        $nuevoEstudiante->estMat = $request -> estMat;
+        
+        $nuevoEstudiante-> save();
+
+        return back()->with('msj','Se registro con exito :3 ');
+    }
+
     public function fnLista(){
         $xAlumnos = Estudiante::all();
         return view('pagLista', compact('xAlumnos'));

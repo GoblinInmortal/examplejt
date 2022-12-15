@@ -18,6 +18,18 @@ use App\Http\Controllers\PagesController;
 
 Route::get('/', [PagesController::class, 'fnIndex'])->name('xIndex');
 
+Route::post('/', [PagesController::class, 'fnRegistrar'])->name('Estudiante.xRegistrar');
+
+
+Route::put('/actualizar/{id}', [PagesController::class, 'fnUpdate'])->name('Estudiante.xUpdate');
+
+
+Route::get('/actualizar/{id}', [PagesController::class, 'fnEstActualizar'])->name('Estudiante.xActualizar');
+
+Route::delete('/eliminar/{id}', [PagesController::class, 'fnEliminar'])->name('Estudiante.xEliminar');
+
+Route::get('/detalle/{id}', [PagesController::class, 'fnEstDetalle'])->name('Estudiante.xDetalle');
+
 
 Route::get('/galeria/{numero?}',[PagesController::class, 'fnGaleria'])->where('numero', '[0-9]+')->name('xGaleria');
 
