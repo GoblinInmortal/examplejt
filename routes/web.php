@@ -36,3 +36,16 @@ Route::get('/galeria/{numero?}',[PagesController::class, 'fnGaleria'])->where('n
 
 Route::get('/lista', [PagesController::class, 'fnLista'])->name('xLista');
 
+////////////////////////////////// CURSO ///////////////////////////
+
+
+Route::post('/2',[PagesController::class,'fnRegistrarCurso'] )->name('Curso.xRegistrarCurso');
+
+Route::get('/detalleCurso/{id}',[PagesController::class,'fnDetalleCurso'] )->name('Curso.xDetalleCurso');
+Route::get('/listaCurso',[PagesController::class,'fnListaCurso'])->name('xListaCurso');
+
+//update
+Route::get('/actualizarCurso/{id}',[PagesController::class,'fnEstActualizarCurso']) ->name('Curso.xActualizarCurso');
+Route::put('/actualizarCurso/{id}',[PagesController::class,'fnUpdateCurso'])->name('Curso.xUpdateCurso');
+//delete
+Route::delete('/eliminarCurso/{id}',[PagesController::class,'fnEliminarCurso'])->name('Curso.xEliminarCurso');

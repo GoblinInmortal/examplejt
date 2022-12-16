@@ -8,16 +8,18 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Globin</title>
   </head>
   <body>
 
 
     <div class= "container  my-5">
 
-      <a href="{{ route ('xIndex') }}" class= "btn btn-secondary"> Inicio </a>
-      <a href="{{ route ('xGaleria') }}" class= "btn btn-secondary"> Galeria </a>
-      <a href="{{ route ('xLista') }}" class= "btn btn-secondary"> Lista </a>
+      <a href="{{ route ('xIndex') }}" class= "btn btn-dark"> Inicio </a>
+      <a href="{{ route ('xGaleria') }}" class= "btn btn-dark"> Galeria </a>
+      <a href="{{ route ('xLista') }}" class= "btn btn-dark"> Lista </a>
+      <a href="{{ route('xListaCurso') }}" class="btn btn-dark"> Curso </a>
+
     </div>
 
     <div class ="container my-4"> 
@@ -28,7 +30,7 @@
       @yield('seccion')
     </div>
 
-    <div class= "container bg-dark text-white text-center"> 
+    <div class= "container bg-secondary text-white text-center"> 
     <h1> Pie de pagina  </h1>
     </div>
 

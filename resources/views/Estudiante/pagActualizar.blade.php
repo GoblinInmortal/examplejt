@@ -13,7 +13,7 @@
 
     <div class="btn btn-dark d-grid fs-5 mb-2"> DETALLE</div>
 
-    <form action="{{ route('Estudiante.xUpdate', $xActAlumnos->id) }}" method="post" class="d-grid gap-2">
+    <form action="{{ route('Curso.xUpdate', $xActAlumnos->id) }}" method="post" class="d-grid gap-2">
         @method('PUT')
         @csrf
 

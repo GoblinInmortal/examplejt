@@ -46,7 +46,21 @@
 
         @if($errors -> has('apeEst'))
             <div class="alert alert-dark alert-dismissible fade show" role="alert">
-                fecha de nacimiento  es requerido 
+                Turno es requerido 
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+
+        @if($errors -> has('apeEst'))
+            <div class="alert alert-dark alert-dismissible fade show" role="alert">
+                Semestre es requerido 
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+
+        @if($errors -> has('apeEst'))
+            <div class="alert alert-dark alert-dismissible fade show" role="alert">
+                Estado de Matricula  es requerido 
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         @endif
